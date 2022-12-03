@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "zwjira"
-version = "0.1.0"
+version = "0.1.1"
 description = "A JIRA workflow automation toolset for personal use"
 authors = ["neothenil <727549953@qq.com>"]
 license = "MIT"
