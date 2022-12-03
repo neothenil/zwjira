@@ -1,8 +1,12 @@
 [tool.poetry]
 name = "zwjira"
 version = "0.1.0"
-description = ""
+description = "A JIRA workflow automation toolset for personal use"
 authors = ["neothenil <727549953@qq.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/neothenil/zwjira"
+keywords = ["automation"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
