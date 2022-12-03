@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "zwjira"
+version = "0.1.0"
+description = ""
+authors = ["neothenil <727549953@qq.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+jira = "^3.4.1"
+atlassian-python-api = "^3.31.1"
+
+[tool.poetry.scripts]
+zwjira = "zwjira.cli:main"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
