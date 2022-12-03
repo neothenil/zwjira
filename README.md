@@ -1,1 +1,1 @@
-An automation toolset for JIRA workflow for personal use.
+A JIRA workflow automation toolset for personal use.
