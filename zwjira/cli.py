@@ -1,7 +1,7 @@
 import argparse
 
 from .config import command_config, command_reset_config
-from .commands import command_mark_fixed
+from .commands import *
 
 
 def parse_args():

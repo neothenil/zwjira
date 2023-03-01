@@ -9,7 +9,7 @@ repository = "https://github.com/neothenil/zwjira"
 keywords = ["automation"]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.8"
 jira = "^3.4.1"
 atlassian-python-api = "^3.31.1"
 

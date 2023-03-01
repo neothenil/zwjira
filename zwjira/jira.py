@@ -11,8 +11,34 @@ def fetch_fields(**data):
 def fetch_issue(issue_key=None, **data):
     if issue_key is None:
         return data
+    data["issue_key"] = issue_key
     issue = get_zwjira().issue(issue_key)
     data["issue"] = issue
+    return data
+
+def fetch_linked_issue(issue=None, linktype:str=None, **data):
+    if issue is None or linktype is None:
+        return data
+    data["issue"] = issue
+    data["linktype"] = linktype
+    linked_issues = []
+    links = issue.fields.issuelinks
+    for link in links:
+        if link.type.name.lower() == linktype.lower():
+            linked_issues.append((link.id, link.outwardIssue.key))
+    data["linked_issues"] = linked_issues
+    return data
+
+
+def transform_linked_issues(issue_key=None, linked_issues=None, transto:str=None, **data):
+    if issue_key is None or linked_issues is None or transto is None:
+        return data
+    data["issue_key"] = issue_key
+    data["linked_issues"] = linked_issues
+    data["transto"] = transto
+    for link_id, link_issue in linked_issues:
+        get_zwjira().create_issue_link(transto, issue_key, link_issue)
+        get_zwjira().delete_issue_link(link_id)
     return data
 
 

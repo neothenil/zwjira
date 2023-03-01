@@ -17,3 +17,11 @@ def command_mark_fixed(issue_key, fixversion):
     data = set_fix_version(**data)
     data = mark_as_fixed(**data)
     return 0
+
+
+def command_transform_linked_issues(issue_key, from_type, to_type):
+    data = {"issue_key": issue_key, "linktype": from_type, "transto": to_type}
+    data = fetch_issue(**data)
+    data = fetch_linked_issue(**data)
+    data = transform_linked_issues(**data)
+    return 0
